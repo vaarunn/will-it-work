@@ -5,6 +5,7 @@ export interface BlogPreview {
     cover_image: string;
     tags: string[];
     slug:string;
+    links:string[]
   }
   
 
@@ -17,7 +18,18 @@ export const blogPreview: BlogPreview[]=[
       "date": "2021-08-14",
       "cover_image": "/images/posts/img3.jpg",
       "tags": ["mylife", "qrcode"],
-      "slug":"/aws-quickstart"
+      "slug":"/aws-quickstart",
+      links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
     },
     {
       "title": "Getting Started with AWS",
@@ -25,7 +37,18 @@ export const blogPreview: BlogPreview[]=[
       "date": "2020-12-27",
       "cover_image": "/images/posts/img1.jpg",
       "tags": ["aws", "coding"],
-      "slug":"/gpt-3-generated-poetry"
+      "slug":"/gpt-3-generated-poetry",
+      links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
 
     },
     {
@@ -34,7 +57,18 @@ export const blogPreview: BlogPreview[]=[
       "date": "2021-08-27",
       "cover_image": "/images/posts/img2.jpg",
       "tags": ["gpt", "openai"],
-      "slug":"/qr-code-micro-app"
+      "slug":"/qr-code-micro-app",
+      links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
 
     },
     {
@@ -43,7 +77,18 @@ export const blogPreview: BlogPreview[]=[
       "date": "2020-12-19",
       "cover_image": "/images/posts/img4.jpg",
       "tags": ["gaming", "fun"],
-      "slug":"/retro-games-with-pico-8"
+      "slug":"/retro-games-with-pico-8",
+      links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
 
     },
     {
@@ -52,7 +97,18 @@ export const blogPreview: BlogPreview[]=[
       "date": "2021-07-12",
       "cover_image": "/images/posts/img5.jpg",
       "tags": ["scss", "coding", "webdev"],
-      "slug":"/saas-starter-app"
+      "slug":"/saas-starter-app",
+      links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
 
     },
     {
@@ -61,7 +117,18 @@ export const blogPreview: BlogPreview[]=[
       "date": "2020-12-22",
       "cover_image": "/images/posts/img6.jpg",
       "tags": ["gaming", "fun"],
-      "slug":"/wolfhunter"
+      "slug":"/wolfhunter",
+      links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
     }
 ]
   

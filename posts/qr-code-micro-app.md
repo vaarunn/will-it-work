@@ -4,6 +4,17 @@ subtitle: "Build a serverless 'hello-world' QR code app with Python and AWS."
 date: "2021-08-14"
 cover_image: "/images/posts/img3.jpg"
 tags: ["mylife", "qrcode"]
+links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
 ---
 
 Ever since the pandemic started, I've noticed QR codes creeping into my daily life. Venue check-ins, digital menus at restaurants, and online payments.

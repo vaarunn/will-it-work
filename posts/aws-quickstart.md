@@ -4,6 +4,17 @@ subtitle: "Create an AWS account and set up CLI/SDK access."
 date: "2020-12-27"
 cover_image: "/images/posts/img1.jpg"
 tags: ["aws", "coding"]
+links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
 ---
 
 "Cloud computing" plays a vital role in the creation of software products and services. It's also one of the most highly sought-after skills in the tech industry.

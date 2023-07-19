@@ -27,15 +27,7 @@ const PostPreview = (props: PostMetadata) => {
 
         <div className="flex gap-2 my-2">
           {props?.tags?.map((tag) => {
-            return (
-              <p
-                onClick={() => {
-                  console.log("nigger");
-                }}
-              >
-                #{tag}
-              </p>
-            );
+            return <p>#{tag}</p>;
           })}
         </div>
 

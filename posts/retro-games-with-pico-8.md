@@ -5,6 +5,17 @@ date: "2020-12-19"
 cr: ["https://www.artstation.com/shizuorin"]
 cover_image: "/images/posts/img4.jpg"
 tags: ["gaming", "fun"]
+links:
+  [
+    "#authentication",
+    "#payments-stripe",
+    "#frontend-react",
+    "#backend-api",
+    "#serverless-architecture",
+    "#infrastructure-as-code",
+    "#crud-operations",
+    "#lessons-learnt",
+  ]
 ---
 
 After watching [High Score](https://www.youtube.com/watch?v=B4jopG1wX88) on Netflix, I was suddenly inspired to develop a retro-style game. I think it was a combination of the aesthetics and nostalgia that motivated me.
