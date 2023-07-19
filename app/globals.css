@@ -7,6 +7,9 @@
     color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
 
 .blog-content {
     @apply prose text-[#b7b7b7] prose-headings:text-white prose-a:text-white prose-em:text-white prose-blockquote:text-white prose-strong:text-white prose-code:text-white prose;

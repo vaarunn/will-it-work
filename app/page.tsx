@@ -1,33 +1,33 @@
 "use client";
 import { useEffect, useState } from "react";
 import PostPreview from "../components/PostPreview";
-import axios from "axios";
-
-interface PostMetadata {
-  title: string;
-  date: string;
-  subtitle: string;
-  cover_image: string;
-  tags: string[];
-  links: string[];
-  slug: string;
-}
+import { blogPreview, BlogPreview } from "@/posts/blogPreview";
 
 const HomePage = () => {
-  const [postMetadata, setPostMetadata] = useState<PostMetadata[] | null>(null);
-  const [query, setQuery] = useState<string>(""); // Assuming query is a string
-  console.log(query);
-
-  const getData = async () => {
-    const response = await axios(`/api/blogs?query=${query}`);
-    setPostMetadata(response.data);
-  };
+  const [query, setQuery] = useState<string>("");
+  const [filteredPosts, setFilteredPosts] =
+    useState<BlogPreview[]>(blogPreview);
 
   useEffect(() => {
-    getData();
+    filterPosts();
   }, [query]);
 
-  const postPreviews = postMetadata?.map((post) => (
+  const filterPosts = () => {
+    if (!query.trim()) {
+      setFilteredPosts(blogPreview);
+    } else {
+      const lowercaseQuery = query.toLowerCase();
+      const filtered = blogPreview.filter(
+        (post) =>
+          post.title.toLowerCase().includes(lowercaseQuery) ||
+          post.subtitle.toLowerCase().includes(lowercaseQuery) ||
+          post.tags.some((tag) => tag.toLowerCase().includes(lowercaseQuery))
+      );
+      setFilteredPosts(filtered);
+    }
+  };
+
+  const postPreviews = filteredPosts.map((post) => (
     <PostPreview key={post.slug} {...post} />
   ));
 
@@ -39,8 +39,10 @@ const HomePage = () => {
         onChange={(e) => {
           setQuery(e.target.value);
         }}
+        placeholder="Search by title or tag..."
         className="text-black"
       />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {postPreviews}
       </div>
