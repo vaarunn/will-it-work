@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    background-color: black;
+    color: white;
+}
+
+
+.blog-content {
+    @apply prose text-[#b7b7b7] prose-headings:text-white prose-a:text-white prose-em:text-white prose-blockquote:text-white prose-strong:text-white prose-code:text-white prose;
+  }
