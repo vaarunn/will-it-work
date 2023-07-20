@@ -6,7 +6,7 @@ import { PostMetadata } from "./PostMetadata";
 const PostPreview = (props: PostMetadata) => {
   return (
     <div
-      className=" rounded-t-xl  max-w-[400px] hover:shadow-white shadow-sm rounded-xl"
+      className=" rounded-t-xl  max-w-[400px] hover:shadow-white shadow-sm rounded-xl "
       key={props.title}
     >
       <Link href={`/posts/${props.slug}`}>

@@ -8,14 +8,13 @@ const HomePage = () => {
   const [query, setQuery] = useState<string>("");
   const [filteredPosts, setFilteredPosts] =
     useState<BlogPreview[]>(blogPreview);
-  const [tagFilter, setTagFilter] = useState<string | null>(null);
+  const [tagFilter, setTagFilter] = useState<string>("");
 
   useEffect(() => {
     filterPosts();
   }, [query, tagFilter]);
 
   const filterPosts = () => {
-    // Filter by query and tagFilter
     if (!query.trim() && !tagFilter) {
       setFilteredPosts(blogPreview);
     } else {
@@ -43,7 +42,7 @@ const HomePage = () => {
         tagFilter={tagFilter}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         {postPreviews}
       </div>
     </>

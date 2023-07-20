@@ -1,19 +1,33 @@
-"use client";
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 
-const SearchBar = ({ setQuery, setTagFilter, tagFilter }) => {
+interface Tag {
+  text: string;
+  value: string;
+}
+
+interface SearchBarProps {
+  setQuery: (query: string) => void;
+  setTagFilter: (tag: string) => void;
+  tagFilter: string;
+}
+
+const SearchBar: FC<SearchBarProps> = ({
+  setQuery,
+  setTagFilter,
+  tagFilter,
+}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleTagFilter = (tag) => {
+  const handleTagFilter = (tag: string) => {
     setTagFilter(tag);
     setIsDropdownOpen(false); // Close the dropdown after selecting a tag
   };
 
-  const tags = [
+  const tags: Tag[] = [
     {
       text: "all tags",
       value: "",
@@ -42,7 +56,7 @@ const SearchBar = ({ setQuery, setTagFilter, tagFilter }) => {
         <button
           id="dropdown-button"
           data-dropdown-toggle="dropdown"
-          className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center    rounded-l-lg    bg-gray-700 hover:bg-gray-600  text-white  relative "
+          className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center rounded-l-lg bg-gray-700 hover:bg-gray-600 text-white relative"
           type="button"
           onClick={toggleDropdown}
         >
@@ -50,7 +64,8 @@ const SearchBar = ({ setQuery, setTagFilter, tagFilter }) => {
           <svg
             className={`w-2.5 h-2.5 ml-2.5 transition-transform transform ${
               isDropdownOpen ? "-rotate-180" : "rotate-0"
-            }`} // Rotate the icon based on dropdown state
+            }`}
+            // Rotate the icon based on dropdown state
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -73,7 +88,7 @@ const SearchBar = ({ setQuery, setTagFilter, tagFilter }) => {
           } bg-gray-700 absolute rounded-xl`}
         >
           <ul
-            className="py-2 text-sm text-gray-700 dark:text-gray-200 "
+            className="py-2 text-sm text-gray-700 dark:text-gray-200"
             aria-labelledby="dropdown-button"
           >
             {tags.map((tag) => {
@@ -81,7 +96,7 @@ const SearchBar = ({ setQuery, setTagFilter, tagFilter }) => {
                 <li key={tag.text} onClick={() => handleTagFilter(tag.value)}>
                   <button
                     type="button"
-                    className="inline-flex w-full px-4 py-2  hover:bg-gray-600 hover:text-white"
+                    className="inline-flex w-full px-4 py-2 hover:bg-gray-600 hover:text-white"
                   >
                     {tag.text}
                   </button>
@@ -94,8 +109,7 @@ const SearchBar = ({ setQuery, setTagFilter, tagFilter }) => {
           <input
             type="search"
             id="search-dropdown"
-            className="block p-2.5 w-full z-20 text-sm text-gray-900  bg-gray-700  placeholder-gray-400 dark:text-white 
-            outline-none"
+            className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-700 placeholder-gray-400 dark:text-white outline-none"
             placeholder="Search Blogs"
             required
             onChange={(e) => {
